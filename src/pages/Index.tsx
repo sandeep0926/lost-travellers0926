@@ -205,12 +205,50 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
+    <>
+      {/* Structured Data for Properties */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": featuredProperties.map((property, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Accommodation",
+                "name": property.title,
+                "description": `Luxury ${property.title} located in ${property.location}`,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": property.location.split(",")[0],
+                  "addressRegion": property.location.split(",")[1]?.trim() || "India",
+                  "addressCountry": "IN"
+                },
+                "priceRange": property.price,
+                "numberOfRooms": property.bedrooms,
+                "occupancy": {
+                  "@type": "QuantitativeValue",
+                  "maxValue": property.guests
+                },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": property.rating,
+                  "reviewCount": property.reviews
+                }
+              }
+            }))
+          })
+        }}
+      />
+      
+      <div className="min-h-screen">
+        <Navbar />
+        <Hero />
 
-      {/* Destinations Section with Category Filter */}
-      <section className="py-20 bg-background">
+        {/* Destinations Section with Category Filter */}
+        <section className="py-20 bg-background" aria-label="Villa Destinations">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <CategoryFilter />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -222,7 +260,7 @@ const Index = () => {
       </section>
 
       {/* Standard Features Section - Ultra Modern Design */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden" aria-label="Villa Features and Amenities">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#1F3D72]/5 rounded-full blur-3xl" />
@@ -235,9 +273,9 @@ const Index = () => {
               <Sparkles className="h-4 w-4 text-[#1F3D72]" />
               <span className="text-sm font-semibold text-[#1F3D72]">Premium Amenities</span>
             </div>
-            <h2 className="mb-6 text-[#1F3D72] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="mb-6 text-[#1F3D72] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Standard Features
-            </h2>
+            </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Enjoy the best of luxury living in our private villas, with premium amenities designed for your comfort and convenience.
             </p>
@@ -320,7 +358,7 @@ const Index = () => {
       </section>
 
       {/* Featured Properties Section */}
-      <section className="py-20">
+      <section className="py-20" aria-label="Featured Luxury Villas">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <div>
@@ -347,7 +385,7 @@ const Index = () => {
       </section>
 
       {/* Available This Weekend Section */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-secondary" aria-label="Weekend Villa Availability">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-primary-lighter px-4 py-2 rounded-full mb-4">
@@ -368,7 +406,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-primary">
+      <section className="py-16 bg-primary" aria-label="Company Statistics">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCard icon={Home} value="50+" label="Luxury Villas" />
@@ -386,7 +424,7 @@ const Index = () => {
       <PartnerSection />
 
       {/* Get Inspiration Section */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-secondary" aria-label="Travel Inspiration">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-accent/10 px-4 py-2 rounded-full mb-4">
@@ -407,7 +445,7 @@ const Index = () => {
       </section>
 
       {/* Client Diaries Section */}
-      <section className="py-20">
+      <section className="py-20" aria-label="Customer Testimonials">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="mb-4 text-foreground">Client Diaries</h2>
@@ -424,7 +462,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white text-[#1F3D72]">
+      <section className="py-20 bg-white text-[#1F3D72]" aria-label="Call to Action">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-6 text-[#1F3D72]">Ready to Experience Luxury?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-[#1F3D72]/80">
@@ -439,7 +477,8 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

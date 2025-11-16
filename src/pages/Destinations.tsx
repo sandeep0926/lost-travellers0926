@@ -5,10 +5,19 @@ import DestinationCard from "@/components/DestinationCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, MapPin, Home, Star, Shield, Clock, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { updateSEO } from "@/utils/seo";
 
 const Destinations = () => {
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    updateSEO(
+      "Villa Destinations in India | Lost Traveller Villas",
+      "Explore premium luxury villas across India. Discover beachfront villas in Goa, heritage villas in Rajasthan, backwater villas in Kerala, mountain retreats in Himachal Pradesh, and more. Book your perfect villa getaway today.",
+      "villa destinations India, Goa villas, Rajasthan villas, Kerala villas, Himachal Pradesh villas, Maharashtra villas, Uttarakhand villas, luxury villa destinations"
+    );
+  }, []);
 
   const indianDestinations = [
     {
@@ -185,8 +194,36 @@ const Destinations = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+      {/* Structured Data for Destinations */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Villa Destinations in India",
+            "description": "Premium luxury villa destinations across India",
+            "itemListElement": indianDestinations.map((destination, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "TouristDestination",
+                "name": destination.title,
+                "description": `Explore luxury villas in ${destination.title}, India`,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": destination.title,
+                  "addressCountry": "IN"
+                }
+              }
+            }))
+          })
+        }}
+      />
+      
+      <div className="min-h-screen bg-background">
+        <Navbar />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-background to-secondary/30 overflow-hidden">
@@ -395,7 +432,8 @@ const Destinations = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
