@@ -13,8 +13,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/">
-              <img src={logo} alt="Lost Traveller Villas" className="h-12 w-auto" />
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>
+              <img src={logo} alt="Lost Traveller Villas" className="h-12 w-auto cursor-pointer" />
             </Link>
           </div>
 
