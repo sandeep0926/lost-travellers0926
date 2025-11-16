@@ -27,24 +27,37 @@ const Navbar = () => {
               Destinations
             </Link>
             <div className="relative group">
-              <button className="text-white hover:text-white/80 transition-colors font-medium flex items-center gap-1">
-                Villas For Rentals
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button className="text-white/90 hover:text-white transition-colors text-sm font-normal flex items-center gap-1.5 tracking-wide">
+                Villa Rentals
+                <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="p-4">
-                  <div>
-                    <h3 className="text-foreground font-semibold mb-3">Destinations in India</h3>
-                    <div className="space-y-2">
-                      <a href="#" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Luxury Villa in Goa</a>
-                      <a href="#" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Luxury Villa in Maharashtra</a>
-                      <a href="#" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Luxury Villa in Rajasthan</a>
-                      <a href="#" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Luxury Villa in Kerala</a>
-                      <a href="#" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Luxury Villa in Himachal Pradesh</a>
-                      <a href="#" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Luxury Villa in Uttarakhand</a>
-                    </div>
+              <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                <div className="p-5">
+                  <div className="mb-4 pb-3 border-b border-gray-100">
+                    <h3 className="text-[#1F3D72] text-xs font-bold uppercase tracking-wider mb-1">Destinations in India</h3>
+                    <p className="text-xs text-gray-500">Explore luxury villas across India</p>
+                  </div>
+                  <div className="space-y-1">
+                    <a href="#" className="block px-3 py-2.5 text-sm text-gray-700 hover:text-[#1F3D72] hover:bg-[#1F3D72]/5 rounded-lg transition-all duration-200 font-medium">
+                      Luxury Villa in Goa
+                    </a>
+                    <a href="#" className="block px-3 py-2.5 text-sm text-gray-700 hover:text-[#1F3D72] hover:bg-[#1F3D72]/5 rounded-lg transition-all duration-200 font-medium">
+                      Luxury Villa in Maharashtra
+                    </a>
+                    <a href="#" className="block px-3 py-2.5 text-sm text-gray-700 hover:text-[#1F3D72] hover:bg-[#1F3D72]/5 rounded-lg transition-all duration-200 font-medium">
+                      Luxury Villa in Rajasthan
+                    </a>
+                    <a href="#" className="block px-3 py-2.5 text-sm text-gray-700 hover:text-[#1F3D72] hover:bg-[#1F3D72]/5 rounded-lg transition-all duration-200 font-medium">
+                      Luxury Villa in Kerala
+                    </a>
+                    <a href="#" className="block px-3 py-2.5 text-sm text-gray-700 hover:text-[#1F3D72] hover:bg-[#1F3D72]/5 rounded-lg transition-all duration-200 font-medium">
+                      Luxury Villa in Himachal Pradesh
+                    </a>
+                    <a href="#" className="block px-3 py-2.5 text-sm text-gray-700 hover:text-[#1F3D72] hover:bg-[#1F3D72]/5 rounded-lg transition-all duration-200 font-medium">
+                      Luxury Villa in Uttarakhand
+                    </a>
                   </div>
                 </div>
               </div>
