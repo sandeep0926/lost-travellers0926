@@ -1,73 +1,110 @@
-# Welcome to your Lovable project
+# Lost Traveller Villas
 
-## Project info
+A premium villa rental platform showcasing luxury villas across India. Experience the best of luxury living with our curated collection of premium properties.
 
-**URL**: https://lovable.dev/projects/602906c3-3683-4830-8af3-d86cff8c5fa2
+## 🏡 Project Overview
 
-## How can I edit this code?
+Lost Traveller Villas is a modern, responsive web application built to help travelers discover and book premium villas across India. The platform features a beautiful user interface with search functionality, destination browsing, and detailed property listings.
 
-There are several ways of editing your application.
+## 🚀 Getting Started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/602906c3-3683-4830-8af3-d86cff8c5fa2) and start prompting.
+- Node.js (v18 or higher) - [Install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- npm or yarn
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Step 1: Clone the repository
+git clone https://github.com/sandeep0926/lost-travellers0926.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd lost-travellers0926
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install the necessary dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The development server will start at `http://localhost:8080` (or another port if 8080 is in use).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The production build will be created in the `dist` directory.
 
-## What technologies are used for this project?
+### Preview Production Build
 
-This project is built with:
+```sh
+npm run preview
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🛠️ Technologies Used
 
-## How can I deploy this project?
+This project is built with modern web technologies:
 
-Simply open [Lovable](https://lovable.dev/projects/602906c3-3683-4830-8af3-d86cff8c5fa2) and click on Share -> Publish.
+- **Vite** - Next generation frontend tooling
+- **React 18** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn-ui** - High-quality React components
+- **React Router** - Client-side routing
+- **Lucide React** - Beautiful icon library
 
-## Can I connect a custom domain to my Lovable project?
+## 📁 Project Structure
 
-Yes, you can!
+```
+├── public/          # Static assets
+├── src/
+│   ├── components/  # Reusable React components
+│   ├── pages/       # Page components
+│   ├── hooks/       # Custom React hooks
+│   ├── lib/         # Utility functions
+│   └── assets/      # Images and other assets
+├── index.html
+└── package.json
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🌐 Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Deploy to Vercel
+
+1. Go to [vercel.com](https://vercel.com)
+2. Sign in with your GitHub account
+3. Click "Add New Project"
+4. Import the repository: `sandeep0926/lost-travellers0926`
+5. Vercel will auto-detect Vite settings
+6. Click "Deploy"
+
+Your site will be live at: `https://lost-travellers0926.vercel.app`
+
+### Deploy to Other Platforms
+
+This project can be deployed to any platform that supports static sites:
+- Netlify
+- GitHub Pages
+- AWS S3 + CloudFront
+- Any static hosting service
+
+## 📝 Features
+
+- 🏖️ Browse premium villas across India
+- 🔍 Advanced search with Domestic/International filters
+- 📍 Destination-based filtering
+- 🎨 Modern, responsive UI design
+- ⚡ Fast performance with Vite
+- 📱 Mobile-friendly design
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+All rights reserved © 2025 Lost Traveller Villas
