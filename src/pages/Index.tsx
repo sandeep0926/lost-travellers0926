@@ -9,6 +9,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Sparkles, TrendingUp, Clock, Waves, Gift, CheckCircle2, Bed, Home, Users, Star, Award } from "lucide-react";
 
 const Index = () => {
@@ -429,9 +430,11 @@ const Index = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto text-[#1F3D72]/80">
             Start planning your dream vacation today. Browse our exclusive collection of luxury villas.
           </p>
-          <Button size="lg" className="bg-[#1F3D72] hover:bg-[#1F3D72]/90 text-white px-12 h-14 text-lg font-medium">
-            Explore Villas
-          </Button>
+          <Link to="/destinations">
+            <Button size="lg" className="bg-[#1F3D72] hover:bg-[#1F3D72]/90 text-white px-12 h-14 text-lg font-medium">
+              Explore Villas
+            </Button>
+          </Link>
         </div>
       </section>
 
