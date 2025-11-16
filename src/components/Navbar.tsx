@@ -27,9 +27,9 @@ const Navbar = () => {
               Destinations
             </Link>
             <div className="relative group">
-              <button className="text-white/90 hover:text-white transition-colors text-sm font-normal flex items-center gap-1.5 tracking-wide">
-                Villa Rentals
-                <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button className="text-white hover:text-white/80 transition-colors font-medium flex items-center gap-1">
+                Villas For Rentals
+                <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
